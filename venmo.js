@@ -7,3 +7,6 @@ if ("serviceWorker" in navigator) {
         console.log(error);
     });
 } 
+else {
+    console.log("Service Worker not supported");
+}
