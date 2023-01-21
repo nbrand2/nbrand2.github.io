@@ -10,3 +10,7 @@ if ("serviceWorker" in navigator) {
 else {
     console.log("Service Worker not supported");
 }
+
+// const submit = document.getElementById("btn");
+
+// submit.addEventListener('click', handleSubmit)
