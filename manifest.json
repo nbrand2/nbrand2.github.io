@@ -9,7 +9,8 @@
         {
             "src": "images/venmo.png",
             "sizes": "900x900",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }
