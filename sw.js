@@ -5,7 +5,7 @@ self.addEventListener("install", e => {
     console.log("Install!");
     e.waitUntil(
         caches.open("static").then(cache => { // cache name "static" could be anything
-            return cache.addAll("./", "./images/venmo.png");
+            return cache.addAll(["./", "./images/venmo.png"]);
         })
     )
 })
