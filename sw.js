@@ -9,3 +9,16 @@ self.addEventListener("install", e => {
         })
     )
 })
+
+// if we found response in cache then return that response
+// if we don't have a cached version of the resource, fetch the
+// resource regularly
+
+self.addEventListener("fetch", e => {
+    console.log('Intercepting fetch request forL ${e.request.url}');
+    e.respondWith(
+        caches.match(e.request).then(response => {
+            return response || fetch(e.request);
+        })
+    )
+})
