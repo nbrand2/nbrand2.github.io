@@ -11,6 +11,14 @@ else {
     console.log("Service Worker not supported");
 }
 
+function handleSubmit() {
+    var profile = document.getElementById("profile").value;
+    var amt = document.getElementById("amt").value;
+    var desc = document.getElementById("amt").value;
+    console.log(profile, amt, desc);
+    window.location.href='transaction.html';
+}
+
 // const submit = document.getElementById("btn");
 
 // submit.addEventListener('click', handleSubmit)
