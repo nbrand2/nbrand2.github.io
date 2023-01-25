@@ -15,6 +15,7 @@ function handleSubmit() {
     var profile = document.getElementById("profile").value;
     var amt = document.getElementById("amt").value;
     var desc = document.getElementById("amt").value;
+    console.log("HEY");
     console.log(profile, amt, desc);
     window.location.href='transaction.html';
 }
