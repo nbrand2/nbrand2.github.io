@@ -27,6 +27,44 @@ input {
 #transaction__img {
     width: 100%;
     height: auto;
+    z-index: 1;
+}
+
+.prof_pic {
+    position: relative;
+}
+
+.img1 {
+    position: absolute;
+    bottom: 80%;
+    left: 40%;
+    /* transform: translate(-50%, 0%); */
+    z-index: 10;
+}
+
+#name {
+    position: relative;
+    bottom: 98%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 400%;
+}
+
+#amt {
+    color:crimson;
+    position: relative;
+    bottom: 92%;
+    left: 0%;
+    font-size: 500%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: bold;
+}
+
+#desc {
+    position: relative;
+    bottom: 93%;
+    left: 0%;
+    font-size: 300%;
 }
 
 div.scroll {
