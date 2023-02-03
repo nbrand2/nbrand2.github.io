@@ -47,7 +47,7 @@ function loadTransaction() {
     const data = JSON.parse(window.sessionStorage.getItem("data"));
     console.log("HEY");
     if (data) {
-        console.log(data[0]);
+        console.log(data[0]["profile"]);
     }
     else {
         console.log("data not assigned yet");
