@@ -23,7 +23,7 @@ if (form) {
         const desc = document.getElementById("desc").value;
         dataArray.push({ profile, amt, desc });
         console.log("Data: ", dataArray);
-        window.sessionStorage.setItem("data",dataArray);
+        window.sessionStorage.setItem("data",dataArray[0]);
         window.location.href = 'transaction.html';
       });
 }
