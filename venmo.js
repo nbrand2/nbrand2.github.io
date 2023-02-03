@@ -33,7 +33,7 @@ else {
 
 const data = window.sessionStorage.getItem("data");
 if (data) {
-    console.log(data[2]);
+    console.log(data);
 }
 else {
     console.log("data not assigned yet");
