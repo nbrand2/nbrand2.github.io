@@ -23,7 +23,7 @@ if (form) {
         const desc = document.getElementById("desc").value;
         dataArray.push({ profile, amt, desc });
         console.log("Data: ", dataArray);
-        window.sessionStorage.setItem("data",dataArray[0]);
+        window.sessionStorage.setItem("data",JSON.stringify(dataArray));
         window.location.href = 'transaction.html';
       });
 }
@@ -31,7 +31,7 @@ else {
     console.log("Form doesn't exist")
 }
 
-const data = window.sessionStorage.getItem("data");
+const data = JSON.parse(window.sessionStorage.getItem("data"));
 if (data) {
     console.log(data);
 }
