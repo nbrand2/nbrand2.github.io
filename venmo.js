@@ -15,6 +15,7 @@ const form = document.getElementById("form");
 const data = [];
 
 if (form) {
+    console.log("Adding event listener");
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const profile = document.getElementById("profile").value;
