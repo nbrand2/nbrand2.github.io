@@ -12,10 +12,10 @@ else {
 }
 
 const form = document.getElementById("form");
-const data = [];
 
 if (form) {
     console.log("Adding event listener");
+    const data = [];
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const profile = document.getElementById("profile").value;
@@ -30,7 +30,13 @@ else {
     console.log("Form doesn't exist")
 }
 
-console.log(data);
+if (data) {
+    console.log(data);
+}
+else {
+    console.log("data not assigned yet");
+}
+
 
 // function handleSubmit() {
 //     profile = document.getElementById("profile").value;
