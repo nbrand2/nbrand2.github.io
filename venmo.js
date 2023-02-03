@@ -16,14 +16,14 @@ const form = document.getElementById("form");
 if (form) {
     console.log("Adding event listener");
     form.addEventListener("submit", (event) => {
-        event.preventDefault();
+        event.preventDefault(); // prevent default behavior (??)
         let dataArray = [];
         const profile = document.getElementById("profile").value;
         const amt = document.getElementById("amt").value;
         const desc = document.getElementById("desc").value;
         dataArray.push({ profile, amt, desc });
         console.log("Data: ", dataArray);
-        window.sessionStorage.setItem("data",JSON.stringify(dataArray));
+        window.sessionStorage.setItem("data",JSON.stringify(dataArray)); // session storage values must be strings, so stringify it
         window.location.href = 'transaction.html';
       });
 }
@@ -31,13 +31,7 @@ else {
     console.log("Form doesn't exist")
 }
 
-const data = JSON.parse(window.sessionStorage.getItem("data"));
-if (data) {
-    console.log(data);
-}
-else {
-    console.log("data not assigned yet");
-}
+
 
 
 // function handleSubmit() {
@@ -50,8 +44,14 @@ else {
 // }
 
 function loadTransaction() {
+    const data = JSON.parse(window.sessionStorage.getItem("data"));
     console.log("HEY");
-    console.log(data);
+    if (data) {
+        console.log(data[0]);
+    }
+    else {
+        console.log("data not assigned yet");
+    }
 }
 
 // const submit = document.getElementById("btn");
