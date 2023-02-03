@@ -16,14 +16,16 @@ var profile, amt, desc;
 const form = document.getElementById("form");
 const data = [];
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    data.push({ username, email, phone });
-    console.log("Data: ", data);
-  });
+if (form) {
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        data.push({ username, email, phone });
+        console.log("Data: ", data);
+      });
+}
 
 // function handleSubmit() {
 //     profile = document.getElementById("profile").value;
