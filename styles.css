@@ -42,7 +42,7 @@ input {
     z-index: 10;
 }
 
-#name {
+#t_name {
     position: relative;
     bottom: 98%;
     left: 50%;
@@ -50,7 +50,7 @@ input {
     font-size: 400%;
 }
 
-#amt {
+#t_amt {
     color:crimson;
     position: relative;
     bottom: 92%;
@@ -60,7 +60,7 @@ input {
     font-style: bold;
 }
 
-#desc {
+#t_desc {
     position: relative;
     bottom: 93%;
     left: 0%;
