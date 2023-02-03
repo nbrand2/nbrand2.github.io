@@ -15,14 +15,15 @@ const form = document.getElementById("form");
 
 if (form) {
     console.log("Adding event listener");
-    const data = [];
     form.addEventListener("submit", (event) => {
         event.preventDefault();
+        let dataArray = [];
         const profile = document.getElementById("profile").value;
         const amt = document.getElementById("amt").value;
         const desc = document.getElementById("desc").value;
-        data.push({ profile, amt, desc });
-        console.log("Data: ", data);
+        dataArray.push({ profile, amt, desc });
+        console.log("Data: ", dataArray);
+        window.sessionStorage.setItem("data",dataArray);
         window.location.href = 'transaction.html';
       });
 }
@@ -30,6 +31,7 @@ else {
     console.log("Form doesn't exist")
 }
 
+const data = window.sessionStorage.getItem("data");
 if (data) {
     console.log(data);
 }
