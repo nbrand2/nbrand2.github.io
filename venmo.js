@@ -11,21 +11,25 @@ else {
     console.log("Service Worker not supported");
 }
 
-var profile, amt, desc;
-
 const form = document.getElementById("form");
 const data = [];
 
 if (form) {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        const username = document.getElementById("username").value;
-        const email = document.getElementById("email").value;
-        const phone = document.getElementById("phone").value;
-        data.push({ username, email, phone });
+        const profile = document.getElementById("profile").value;
+        const amt = document.getElementById("amt").value;
+        const desc = document.getElementById("desc").value;
+        data.push({ profile, amt, desc });
         console.log("Data: ", data);
+        window.location.href = 'transaction.html';
       });
 }
+else {
+    console.log("Form doesn't exist")
+}
+
+console.log(data);
 
 // function handleSubmit() {
 //     profile = document.getElementById("profile").value;
@@ -38,7 +42,7 @@ if (form) {
 
 function loadTransaction() {
     console.log("HEY");
-    console.log(profile, amt, desc);
+    console.log(data);
 }
 
 // const submit = document.getElementById("btn");
