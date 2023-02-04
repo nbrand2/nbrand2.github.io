@@ -79,6 +79,9 @@ function convertDate(date) {
         hours -= 12;
         ampm = "PM";
     }
+    if (mins < 10) {
+        mins = "0" + mins;
+    }
     return month + " " + day + ", " + year + " " + hours + ":" + mins + " " + ampm;
 }
 
