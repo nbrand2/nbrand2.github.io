@@ -39,8 +39,8 @@ async function saveFile() {
     let formData = new FormData();
     formData.append("file", input.files[0]);
     await fetch("./upload.php", {method: "POST", body: formData});
-    alert("The file " + input.files[0] + " has been uploaded successfully");
-    return input.files[0];
+    alert("The file " + input.files[0].name + " has been uploaded successfully");
+    return input.files[0].name;
 }
 
 
