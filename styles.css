@@ -36,24 +36,26 @@ input {
 
 .img1 {
     position: absolute;
-    bottom: 80%;
-    left: 40%;
-    /* transform: translate(-50%, 0%); */
-    z-index: 10;
+    bottom: 85%;
+    left: 50%;
+    max-width: 20%;
+    transform: translate(-50%, 0%);
+    z-index: 0;
 }
 
 #t_name {
     position: absolute;
-    bottom: 77%;
+    bottom: 81%;
     left: 50%;
     transform: translate(-50%, 0%);
     font-size: 400%;
+    width: max-content;
 }
 
 #t_amt {
     color:crimson;
     position: absolute;
-    bottom: 69%;
+    bottom: 74.5%;
     left: 50%;
     transform: translate(-50%, 0%);
     font-size: 500%;
@@ -63,16 +65,26 @@ input {
 
 #t_desc {
     position: absolute;
-    bottom: 73%;
+    bottom: 78.7%;
     left: 50%;
     transform: translate(-50%, 0%);
     font-size: 300%;
+    width: max-content;
 }
 
 #date {
     position: absolute;
-    bottom: 40%;
-    left: 50%;
+    bottom: 33.5%;
+    left: 4.5%;
+    /* transform: translate(-50%, 0%); */
+    font-size: 290%;
+    width: max-content;
+}
+
+#paid_to {
+    position: absolute;
+    bottom: 25%;
+    left: 5%;
     transform: translate(-50%, 0%);
     font-size: 290%;
 }

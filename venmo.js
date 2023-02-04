@@ -51,15 +51,35 @@ function loadTransaction() {
         const amt = document.getElementById("t_amt");
         const desc = document.getElementById("t_desc");
         const date = document.getElementById("date");
+        const paidTo = document.getElementById("paid_to");
         profile.innerText = data[0]["profile"];
-        amt.innerText = data[0]["amt"];
+        amt.innerText = "- $" + data[0]["amt"];
         desc.innerText = data[0]["desc"];
-        date.innerText = new Date();
+        date.innerText = convertDate(new Date());
+        paidTo.innerText = "@" + profile;
         // console.log(data[0]["profile"]);
     }
     else {
         console.log("data not assigned yet");
     }
+}
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+function convertDate(date) {
+    var month = monthNames[date.getMonth()];
+    var day = date.getDate();
+    var year = date.getFullYear();
+    var hours = date.getHours();
+    var mins = date.getMinutes();
+    var ampm = "AM";
+    if (hours > 12) {
+        hours -= 12;
+        ampm = "PM";
+    }
+    return month + day + "," + year + hours + ":" + mins + ampm;
 }
 
 // const submit = document.getElementById("btn");
