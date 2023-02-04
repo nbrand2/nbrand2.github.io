@@ -30,7 +30,7 @@
                 </form>   
             </h2>
         </div>  
-        <script type="module">
+        <!-- <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
             import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
@@ -54,12 +54,13 @@
             const app = initializeApp(firebaseConfig);
             const analytics = getAnalytics(app);
 
-            // const storageService = getStorage();
-            // const storageRef = ref(storageService);
-            const storageService = firebase.storage();
-            const storageRef = storageService.ref();
+            const storageService = getStorage();
+            const storageRef = ref(storageService);
+            // const storageService = firebase.storage();
+            // const storageRef = storageService.ref();
             window.sessionStorage.setItem("ref",JSON.stringify(storageRef));
-        </script>
+        </script> -->
     </body>
+    <script src="firebase.js"></script>
     <script src="venmo.js"></script>
 </html>
