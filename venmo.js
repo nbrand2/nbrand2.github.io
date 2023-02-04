@@ -54,7 +54,7 @@ function loadTransaction() {
         const paidTo = document.getElementById("paid_to");
         profile.innerText = data[0]["profile"];
         amt.innerText = "- $" + data[0]["amt"];
-        desc.innerText = data[0]["desc"];
+        desc.innerText = "\"" + data[0]["desc"] + "\"";
         date.innerText = convertDate(new Date());
         paidTo.innerText = data[0]["profile"];
         // console.log(data[0]["profile"]);

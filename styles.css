@@ -48,20 +48,22 @@ input {
     bottom: 81%;
     left: 50%;
     transform: translate(-50%, 0%);
-    font-size: 400%;
+    font-size: 350%;
+    font-weight: 500;
     font-family: 'Poppins';
     width: max-content;
+    color: #2f3032;
 }
 
 #t_amt {
     color:crimson;
     position: absolute;
     bottom: 74.5%;
-    left: 50%;
+    left: 49%;
     transform: translate(-50%, 0%);
-    font-size: 500%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-style: bold;
+    font-size: 375%;
+    font-family: 'Poppins';
+    font-weight: bold;
 }
 
 #t_desc {
@@ -69,25 +71,29 @@ input {
     bottom: 78.7%;
     left: 50%;
     transform: translate(-50%, 0%);
-    font-size: 300%;
+    font-size: 250%;
     width: max-content;
+    color: #2f3032;
+    font-family: 'Roboto';
 }
 
 #date {
     position: absolute;
-    bottom: 33.5%;
+    bottom: 33.7%;
     left: 4.5%;
-    /* transform: translate(-50%, 0%); */
     font-size: 290%;
     width: max-content;
+    color: #2f3032;
+    font-family: 'Roboto';
 }
 
 #paid_to {
     position: absolute;
-    bottom: 25%;
-    left: 15%;
-    transform: translate(-50%, 0%);
+    bottom: 24.9%;
+    left: 8.5%;
     font-size: 290%;
+    color: #2f3032;
+    font-family: 'Roboto';
 }
 
 div.scroll {
