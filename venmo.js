@@ -56,7 +56,7 @@ function loadTransaction() {
         amt.innerText = "- $" + data[0]["amt"];
         desc.innerText = data[0]["desc"];
         date.innerText = convertDate(new Date());
-        paidTo.innerText = "@" + profile;
+        paidTo.innerText = "@" + data[0]["profile"];
         // console.log(data[0]["profile"]);
     }
     else {
