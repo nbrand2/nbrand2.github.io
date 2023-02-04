@@ -49,6 +49,7 @@ input {
     left: 50%;
     transform: translate(-50%, 0%);
     font-size: 400%;
+    font-family: 'Poppins';
     width: max-content;
 }
 
@@ -84,7 +85,7 @@ input {
 #paid_to {
     position: absolute;
     bottom: 25%;
-    left: 5%;
+    left: 15%;
     transform: translate(-50%, 0%);
     font-size: 290%;
 }

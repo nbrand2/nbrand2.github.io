@@ -56,7 +56,7 @@ function loadTransaction() {
         amt.innerText = "- $" + data[0]["amt"];
         desc.innerText = data[0]["desc"];
         date.innerText = convertDate(new Date());
-        paidTo.innerText = "@" + data[0]["profile"];
+        paidTo.innerText = data[0]["profile"];
         // console.log(data[0]["profile"]);
     }
     else {
@@ -79,7 +79,7 @@ function convertDate(date) {
         hours -= 12;
         ampm = "PM";
     }
-    return month + day + "," + year + hours + ":" + mins + ampm;
+    return month + " " + day + ", " + year + " " + hours + ":" + mins + " " + ampm;
 }
 
 // const submit = document.getElementById("btn");
