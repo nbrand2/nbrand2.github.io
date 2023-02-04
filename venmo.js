@@ -1,3 +1,4 @@
+
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").then(registration => {
         console.log("SW Registered!");
@@ -36,22 +37,27 @@ else {
 async function saveFile() {
     const input = document.getElementById("fileupload");
 
-    let formData = new FormData();
-    formData.append("file", input.files[0]);
-    await fetch("./upload.php", {method: "POST", body: formData});
-    alert("The file " + input.value.substring(12) + " has been uploaded successfully");
-    return input.value.substring(12); 
+    let selectedFile = input.files[0];
+
+    const storageRef = JSON.parse(window.sessionStorage.getItem("ref"));
+    
+    const uploadTask = storageRef.child('images/${selectedFile.name}').put(selectedFile); //create a child directory called images, and place the file inside this directory
+    uploadTask.on('state_changed', (snapshot) => {
+    // Observe state change events such as progress, pause, and resume
+    }, (error) => {
+        // Handle unsuccessful uploads
+        console.log(error);
+    }, () => {
+        // Do something once upload is complete
+        console.log('success');
+    });
+    // let formData = new FormData();
+    // formData.append("file", input.files[0]);
+    // await fetch("./upload.php", {method: "POST", body: formData});
+    // alert("The file " + input.value.substring(12) + " has been uploaded successfully");
+    // return input.value.substring(12); 
 }
 
-
-// function handleSubmit() {
-//     profile = document.getElementById("profile").value;
-//     amt = document.getElementById("amt").value;
-//     desc = document.getElementById("amt").value;
-//     console.log("HEY");
-//     console.log(profile, amt, desc);
-//     window.location.href='transaction.html';
-// }
 
 function loadTransaction() {
     const data = JSON.parse(window.sessionStorage.getItem("data"));
@@ -69,6 +75,7 @@ function loadTransaction() {
         date.innerText = convertDate(new Date());
         paidTo.innerText = data[0]["username"];
         prof_pic.src = "./images/" + data[0]["file_name"];
+        console.log(prof_pic.src);
         // console.log(data[0]["profile"]);
     }
     else {

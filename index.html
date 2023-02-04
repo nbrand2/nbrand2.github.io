@@ -9,25 +9,57 @@
         <link rel="manifest" href="manifest.json">
         <link rel="apple-touch-icon" href="images/venmo.png">
     </head>
-    <div>
-        <h2>
-            <form id="form">
-                <label for="profile">Choose your profile:</label><br><br>
-                <select name="profile" id="profile">
-                    <option value="TDX">TDX</option>
-                    <option value="UCLA Farmers Market">UCLA Farmers Market</option>
-                    <option value="Bruin Experiment">Bruin Experiment</option>
-                </select><br><br>
-                <label for="amt">Amount:</label><br><br>
-                <input type="text" id="amt"><br><br>
-                <label for="desc">Description:</label><br><br>
-                <input type="text" id="desc"><br><br>
-                <label for="username">Username:</label><br><br>
-                <input type="text" id="username"><br><br>
-                <input id="fileupload" type="file" accept=".png, .jpg, .jpeg"><br><br>
-                <input type="submit"><br><br>
-            </form>   
-        </h2>
-    </div>  
+    <body>
+        <div>
+            <h2>
+                <form id="form">
+                    <label for="profile">Choose your profile:</label><br><br>
+                    <select name="profile" id="profile">
+                        <option value="TDX">TDX</option>
+                        <option value="UCLA Farmers Market">UCLA Farmers Market</option>
+                        <option value="Bruin Experiment">Bruin Experiment</option>
+                    </select><br><br>
+                    <label for="amt">Amount:</label><br><br>
+                    <input type="text" id="amt"><br><br>
+                    <label for="desc">Description:</label><br><br>
+                    <input type="text" id="desc"><br><br>
+                    <label for="username">Username:</label><br><br>
+                    <input type="text" id="username"><br><br>
+                    <input id="fileupload" type="file" accept=".png, .jpg, .jpeg"><br><br>
+                    <input type="submit"><br><br>
+                </form>   
+            </h2>
+        </div>  
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+            import { getStorage } from "firebase/storage";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+            
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyD2xGfDrGjF-s-VU7hopuPH5OjZUrmrJM8",
+                authDomain: "upload-7a6b2.firebaseapp.com",
+                projectId: "upload-7a6b2",
+                storageBucket: "upload-7a6b2.appspot.com",
+                messagingSenderId: "855284103760",
+                appId: "1:855284103760:web:c4143b8b80671043de2f55",
+                measurementId: "G-9Q203QJKJD"
+            };
+            
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+
+            const storageService = getStorage(app);
+            const storageRef = ref(storageService);
+            // const storageService = firebase.storage();
+            // const storageRef = storageService.ref();
+            window.sessionStorage.setItem("ref",JSON.stringify(storageRef));
+        </script>
+    </body>
     <script src="venmo.js"></script>
 </html>
