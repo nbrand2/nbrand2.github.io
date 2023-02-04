@@ -30,37 +30,40 @@
                 </form>   
             </h2>
         </div>  
-        <!-- <script type="module">
+        <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
             import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
-            // import { getStorage, ref } from "firebase/storage";
+            import { getStorage, ref, uploadBytes  } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js";
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
-            
+          
             // Your web app's Firebase configuration
             // For Firebase JS SDK v7.20.0 and later, measurementId is optional
             const firebaseConfig = {
-                apiKey: "AIzaSyD2xGfDrGjF-s-VU7hopuPH5OjZUrmrJM8",
-                authDomain: "upload-7a6b2.firebaseapp.com",
-                projectId: "upload-7a6b2",
-                storageBucket: "upload-7a6b2.appspot.com",
-                messagingSenderId: "855284103760",
-                appId: "1:855284103760:web:c4143b8b80671043de2f55",
-                measurementId: "G-9Q203QJKJD"
+              apiKey: "AIzaSyD2xGfDrGjF-s-VU7hopuPH5OjZUrmrJM8",
+              authDomain: "upload-7a6b2.firebaseapp.com",
+              projectId: "upload-7a6b2",
+              storageBucket: "upload-7a6b2.appspot.com",
+              messagingSenderId: "855284103760",
+              appId: "1:855284103760:web:c4143b8b80671043de2f55",
+              measurementId: "G-9Q203QJKJD"
             };
-            
+          
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const analytics = getAnalytics(app);
 
-            const storageService = getStorage();
-            const storageRef = ref(storageService);
-            // const storageService = firebase.storage();
-            // const storageRef = storageService.ref();
-            window.sessionStorage.setItem("ref",JSON.stringify(storageRef));
-        </script> -->
+            const storage = getStorage(firebaseApp);
+            const storageRef = ref(storage, 'some-child');
+                
+            // 'file' comes from the Blob or File API
+            const file = document.getElementById("fileupload").files[0];
+            uploadBytes(storageRef, file).then((snapshot) => {
+                console.log('Uploaded a blob or file!');
+            });
+            //window.sessionStorage.setItem("ref",JSON.stringify(storageRef));
+        </script>
     </body>
-    <script src="firebase.js" type="module"></script>
     <script src="venmo.js"></script>
 </html>
