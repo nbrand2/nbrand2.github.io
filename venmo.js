@@ -21,7 +21,8 @@ if (form) {
         const profile = document.getElementById("profile").value;
         const amt = document.getElementById("amt").value;
         const desc = document.getElementById("desc").value;
-        dataArray.push({ profile, amt, desc });
+        const username = document.getElementById("username").value;
+        dataArray.push({ profile, amt, desc, username });
         console.log("Data: ", dataArray);
         window.sessionStorage.setItem("data",JSON.stringify(dataArray)); // session storage values must be strings, so stringify it
         window.location.href = 'transaction.html';
@@ -56,7 +57,7 @@ function loadTransaction() {
         amt.innerText = "- $" + data[0]["amt"];
         desc.innerText = "\"" + data[0]["desc"] + "\"";
         date.innerText = convertDate(new Date());
-        paidTo.innerText = data[0]["profile"];
+        paidTo.innerText = data[0]["username"];
         // console.log(data[0]["profile"]);
     }
     else {
