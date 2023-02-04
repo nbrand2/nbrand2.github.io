@@ -1,7 +1,7 @@
 {
     "name": "venmo",
     "short_name": "venmo",
-    "start_url": ".",
+    "start_url": "./index.html",
     "background_color": "#d9dadb",
     "theme_color": "#d9dadb",
     "display": "standalone",
