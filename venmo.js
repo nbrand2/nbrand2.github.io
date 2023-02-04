@@ -47,7 +47,15 @@ function loadTransaction() {
     const data = JSON.parse(window.sessionStorage.getItem("data"));
     console.log("HEY");
     if (data) {
-        console.log(data[0]["profile"]);
+        const profile = document.getElementById("t_name");
+        const amt = document.getElementById("t_amt");
+        const desc = document.getElementById("t_desc");
+        const date = document.getElementById("date");
+        profile.innerText = data[0]["profile"];
+        amt.innerText = data[0]["amt"];
+        desc.innerText = data[0]["desc"];
+        date.innerText = new Date();
+        // console.log(data[0]["profile"]);
     }
     else {
         console.log("data not assigned yet");
