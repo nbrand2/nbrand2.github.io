@@ -17,6 +17,7 @@ if (form) {
     console.log("Adding event listener");
     form.addEventListener("submit", (event) => {
         event.preventDefault(); // prevent default behavior (??)
+        saveFile();
         let dataArray = [];
         const profile = document.getElementById("profile").value;
         const amt = document.getElementById("amt").value;
@@ -32,7 +33,15 @@ else {
     console.log("Form doesn't exist")
 }
 
+async function saveFile() {
+    const input = document.getElementById("fileupload");
+    const preview = document.getElementById("preview");
 
+    let formData = new FormData();
+    formData.append("file", input.files[0]);
+    await fetch("./upload.php", {method: "POST", body: formData});
+    alert("The file has been uploaded successfully");
+}
 
 
 // function handleSubmit() {
