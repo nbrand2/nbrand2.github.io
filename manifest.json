@@ -1,14 +1,14 @@
 {
     "name": "Venmo",
-    "short_name": "venmo",
+    "short_name": "Venmo",
     "start_url": "./index.html",
     "background_color": "#d9dadb",
     "theme_color": "#d9dadb",
     "display": "standalone",
     "icons": [
         {
-            "src": "images/venmo.png",
-            "sizes": "900x900",
+            "src": "images/venmo_2.png",
+            "sizes": "425x425",
             "type": "image/png",
             "purpose": "any maskable"
         }
