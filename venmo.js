@@ -27,7 +27,6 @@ if (form) {
         dataArray.push({ profile, amt, desc, username });
         console.log("Data: ", dataArray);
         window.sessionStorage.setItem("data",JSON.stringify(dataArray)); // session storage values must be strings, so stringify it
-        window.location.href = 'transaction.html';
       });
 }
 else {
