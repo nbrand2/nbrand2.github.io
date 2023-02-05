@@ -66,7 +66,7 @@
                 uploadBytes(storageRef, file).then((snapshot) => {
                     getDownloadURL(snapshot.ref).then(downloadURL => {
                         console.log('Download link to your file: ', downloadURL);
-                        //window.sessionStorage.setItem("img_url", url);
+                        window.sessionStorage.setItem("img_url", downloadURL);
                     })
                     .catch((error) => {
                         switch (error.code) {
