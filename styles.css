@@ -99,6 +99,20 @@ input {
     font-weight: bold;
 }
 
+#back_btn {
+    position: absolute;
+    bottom: 95%;
+    left: 2%;
+    width: 5%;
+    height: 5%;
+    /* visibility: hidden; */
+}
+
+#history_pic {
+    width: 100%;
+    height: 100%;
+}
+
 div.scroll {
     /* background-color: #fed9ff; */
     width: 100%;

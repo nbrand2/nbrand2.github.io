@@ -89,6 +89,10 @@ function loadTransaction() {
     }
 }
 
+function backArrow() {
+    window.location.href = 'history.html';
+}
+
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
