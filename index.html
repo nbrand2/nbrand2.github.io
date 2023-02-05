@@ -63,7 +63,17 @@
                 event.preventDefault(); // prevent default behavior (??)
 
                 // snapshot.ref
-                getDownloadURL(storageRef).then(downloadURL => {
+
+                // 'file' comes from the Blob or File API
+                const file = document.getElementById("fileupload").files[0];    
+                uploadBytes(storageRef, file).then((snapshot) => {
+                    console.log("uploaded img");
+                    getImgURL();
+                });
+            });
+
+            async function getImgURL() {
+                await getDownloadURL(storageRef).then(downloadURL => {
                         console.log('Download link to your file: ', downloadURL);
                         window.sessionStorage.setItem("img_url", downloadURL);
                     })
@@ -82,14 +92,8 @@
                             console.log("Unknown error occurred, inspect the server response");
                             break; 
                     }});
-
-                // 'file' comes from the Blob or File API
-                // const file = document.getElementById("fileupload").files[0];    
-                // uploadBytes(storageRef, file).then((snapshot) => {
-                //     console.log("uploaded img");
-                // });
                 window.location.href = 'transaction.html';
-            });
+            }
 
             //export {storageRef, uploadBytes};
             //window.sessionStorage.setItem("ref",JSON.stringify(storageRef));
