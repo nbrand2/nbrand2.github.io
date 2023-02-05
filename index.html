@@ -66,11 +66,7 @@
                 uploadBytes(storageRef, file).then((snapshot) => {
                     console.log('Uploaded a blob or file!');
                 });
-            });
-
-            const body = document.getElementById("transaction_body");
-
-            body.addEventListener("onload", (event) => {
+                
                 // Get the download URL
                 getDownloadURL(storageRef)
                 .then((url) => {
