@@ -64,25 +64,26 @@
                 // 'file' comes from the Blob or File API
                 const file = document.getElementById("fileupload").files[0];
                 uploadBytes(storageRef, file).then((snapshot) => {
-                    getDownloadURL(snapshot.ref).then(downloadURL => {
-                        console.log('Download link to your file: ', downloadURL);
-                        window.sessionStorage.setItem("img_url", downloadURL);
-                    })
-                    .catch((error) => {
-                        switch (error.code) {
-                        case 'storage/object-not-found':
-                            console.log("File doesn't exist");
-                            break; 
-                        case 'storage/unauthorized':
-                            console.log("User doesn't have permission to access the object");
-                            break; 
-                        case 'storage/canceled': 
-                            console.log("User canceled the upload");
-                            break; 
-                        case 'storage/unknown':
-                            console.log("Unknown error occurred, inspect the server response");
-                            break; 
-                    }});
+                    console.log("uploaded img");
+                    // getDownloadURL(snapshot.ref).then(downloadURL => {
+                    //     console.log('Download link to your file: ', downloadURL);
+                    //     window.sessionStorage.setItem("img_url", downloadURL);
+                    // })
+                    // .catch((error) => {
+                    //     switch (error.code) {
+                    //     case 'storage/object-not-found':
+                    //         console.log("File doesn't exist");
+                    //         break; 
+                    //     case 'storage/unauthorized':
+                    //         console.log("User doesn't have permission to access the object");
+                    //         break; 
+                    //     case 'storage/canceled': 
+                    //         console.log("User canceled the upload");
+                    //         break; 
+                    //     case 'storage/unknown':
+                    //         console.log("Unknown error occurred, inspect the server response");
+                    //         break; 
+                    // }});
                 });
                 window.location.href = 'transaction.html';
             });
