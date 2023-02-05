@@ -74,14 +74,14 @@ function loadTransaction() {
         const desc = document.getElementById("t_desc");
         const date = document.getElementById("date");
         const paidTo = document.getElementById("paid_to");
-        //const prof_pic = document.getElementById("profile_pic");
+        const prof_pic = document.getElementById("profile_pic");
         profile.innerText = data[0]["profile"];
         amt.innerText = "- $" + data[0]["amt"];
         desc.innerText = "\"" + data[0]["desc"] + "\"";
         date.innerText = convertDate(new Date());
         paidTo.innerText = data[0]["username"];
         //prof_pic.src = "./images/" + data[0]["file_name"];
-        console.log(window.sessionStorage.getItem("img_url"));
+        prof.pic.src = window.sessionStorage.getItem("img_url");
         // console.log(data[0]["profile"]);
     }
     else {
