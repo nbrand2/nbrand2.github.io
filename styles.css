@@ -101,11 +101,11 @@ input {
 
 #back_btn {
     position: absolute;
-    bottom: 95%;
-    left: 2%;
+    bottom: 95.5%;
+    left: 3%;
     width: 5%;
-    height: 5%;
-    /* visibility: hidden; */
+    height: 3%;
+    visibility: hidden;
 }
 
 #history_pic {
