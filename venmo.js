@@ -82,7 +82,7 @@ function loadTransaction() {
         date.innerText = convertDate(new Date());
         paidTo.innerText = data[0]["username"];
         //prof_pic.src = "./images/" + data[0]["file_name"];
-        //console.log(prof_pic.src);
+        console.log(window.sessionStorage.getItem("img_url"));
         // console.log(data[0]["profile"]);
     }
     else {
