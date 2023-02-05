@@ -55,7 +55,7 @@
             const analytics = getAnalytics(app);
 
             const storage = getStorage(app);
-            const storageRef = ref(storage, 'some-child');
+            const storageRef = ref(storage, 'profile_picture');
 
             const form = document.getElementById("form");
 
@@ -65,6 +65,31 @@
                 const file = document.getElementById("fileupload").files[0];
                 uploadBytes(storageRef, file).then((snapshot) => {
                     console.log('Uploaded a blob or file!');
+                });
+            });
+
+            const body = document.getElementById("transaction_body");
+
+            body.addEventListener("onload", (event) => {
+                // Get the download URL
+                getDownloadURL(storageRef)
+                .then((url) => {
+                    // Insert url into an <img> tag to "download"
+                    // img.setAttribute('src', url);
+                    console.log(url);
+                    //window.sessionStorage.setItem("img_url", url);
+                })
+                .catch((error) => {
+                    switch (error.code) {
+                    case 'storage/object-not-found':
+                        break;  // File doesn't exist
+                    case 'storage/unauthorized':
+                        break; // User doesn't have permission to access the object
+                    case 'storage/canceled': 
+                        break; // User canceled the upload
+                    case 'storage/unknown':
+                        break; // Unknown error occurred, inspect the server response
+                    }
                 });
             });
 
