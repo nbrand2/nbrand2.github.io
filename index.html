@@ -56,12 +56,19 @@
 
             const storage = getStorage(app);
             const storageRef = ref(storage, 'some-child');
-                
-            // 'file' comes from the Blob or File API
-            const file = document.getElementById("fileupload").files[0];
-            uploadBytes(storageRef, file).then((snapshot) => {
-                console.log('Uploaded a blob or file!');
+
+            const form = document.getElementById("form");
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault(); // prevent default behavior (??)
+                // 'file' comes from the Blob or File API
+                const file = document.getElementById("fileupload").files[0];
+                uploadBytes(storageRef, file).then((snapshot) => {
+                    console.log('Uploaded a blob or file!');
+                });
             });
+
+            //export {storageRef, uploadBytes};
             //window.sessionStorage.setItem("ref",JSON.stringify(storageRef));
         </script>
     </body>

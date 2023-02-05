@@ -35,22 +35,29 @@ else {
 }
 
 // async function saveFile() {
-//     const input = document.getElementById("fileupload");
-
-//     let selectedFile = input.files[0];
-
-//     const storageRef = JSON.parse(window.sessionStorage.getItem("ref"));
-
-//     const uploadTask = storageRef.child('images/${selectedFile.name}').put(selectedFile); //create a child directory called images, and place the file inside this directory
-//     uploadTask.on('state_changed', (snapshot) => {
-//     // Observe state change events such as progress, pause, and resume
-//     }, (error) => {
-//         // Handle unsuccessful uploads
-//         console.log(error);
-//     }, () => {
-//         // Do something once upload is complete
-//         console.log('success');
+//     // 'file' comes from the Blob or File API
+//     const file = document.getElementById("fileupload").files[0];
+//     uploadBytes(storageRef, file).then((snapshot) => {
+//         console.log('Uploaded a blob or file!');
 //     });
+
+//     // const input = document.getElementById("fileupload");
+
+//     // let selectedFile = input.files[0];
+
+//     // const storageRef = JSON.parse(window.sessionStorage.getItem("ref"));
+
+//     // const uploadTask = storageRef.child('images/${selectedFile.name}').put(selectedFile); //create a child directory called images, and place the file inside this directory
+//     // uploadTask.on('state_changed', (snapshot) => {
+//     // // Observe state change events such as progress, pause, and resume
+//     // }, (error) => {
+//     //     // Handle unsuccessful uploads
+//     //     console.log(error);
+//     // }, () => {
+//     //     // Do something once upload is complete
+//     //     console.log('success');
+//     // });
+
 //     // let formData = new FormData();
 //     // formData.append("file", input.files[0]);
 //     // await fetch("./upload.php", {method: "POST", body: formData});
