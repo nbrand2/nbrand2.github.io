@@ -64,15 +64,9 @@
                 // 'file' comes from the Blob or File API
                 const file = document.getElementById("fileupload").files[0];
                 uploadBytes(storageRef, file).then((snapshot) => {
-                    //console.log('Uploaded a blob or file!');
-
-                    // Get the download URL
-                    getDownloadURL(storageRef)
-                    .then((url) => {
-                        // Insert url into an <img> tag to "download"
-                        // img.setAttribute('src', url);
-                        //console.log(url);
-                        window.sessionStorage.setItem("img_url", url);
+                    getDownloadURL(snapshot.ref).then(downloadURL => {
+                        console.log('Download link to your file: ', downloadURL);
+                        //window.sessionStorage.setItem("img_url", url);
                     })
                     .catch((error) => {
                         switch (error.code) {
@@ -88,8 +82,7 @@
                         case 'storage/unknown':
                             console.log("Unknown error occurred, inspect the server response");
                             break; 
-                        }
-                    });
+                    }});
                 });
             
             });
