@@ -81,7 +81,7 @@ function loadTransaction() {
         date.innerText = convertDate(new Date());
         paidTo.innerText = data[0]["username"];
         //prof_pic.src = "./images/" + data[0]["file_name"];
-        prof.pic.src = window.sessionStorage.getItem("img_url");
+        prof_pic.src = window.sessionStorage.getItem("img_url");
         // console.log(data[0]["profile"]);
     }
     else {
