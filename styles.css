@@ -113,6 +113,10 @@ input {
     height: 100%;
 }
 
+#history_body {
+    margin: 0%;
+}
+
 div.scroll {
     /* background-color: #fed9ff; */
     width: 100%;
